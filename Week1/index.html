@@ -7,14 +7,16 @@
 <head>
 
 	<meta charset="utf-8">
-
+	
 	<!--  Mobile Optimized -->
 	<meta name="HandheldFriendly" content="True"/>
 	<meta name="MobileOptimized" content="320"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	<meta http-equiv="cleartype" content="on"/>
-
+	
 	<!-- StyleSheets -->
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile.structure-1.3.1.min.css" />
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css" />
 	<link href="css/style.css" rel="stylesheet" type="text/css" />
 
 	<!-- Modernizr  -->
@@ -23,24 +25,209 @@
 	<title>Band Mates</title>
 </head>
 <body>
-<div id="main">
-	<section data-role="page" id="home">
-		<header data-role="header">Band Mates</header>
-
-
-		<section data-roll"content">
-
+	<div id="main">
+	
+		<section data-role="page" id="home" class="page">
+		
+		
+			<header data-role="header" data-position="fixed" class="header">
+				<h1><img src="img/brand2.gif" id="brand"/>BandMates</h1>
+			</header>
+			
+			
+			<section data-roll="content">
+			
+				<div class="ui-grid-a" id="find">
+					<div class="ui-block-a" >
+						<input type="search" placeholder="Search Data" data-mini="true" data-theme="c" id="search"></input>
+					</div>
+					<div class="ui-block-b"> 
+						<span id="filtered">Filtered</span>
+					</div>
+				</div>
+	
+				<ul data-role="listview" data-inset="true" data-filter="false" id="newFeed">
+					<li>
+							<h3>Ryan Walsh</h3>
+							<p>Bass</p>
+							<p>321 567-2232</p>
+					</li>
+					<li>
+							<h3>Russ Gaspard</h3>
+							<p>Guitar</p>
+							<p>407 439-0605</p>
+					</li>
+					<li>
+							<h3>Joe DeBottis</h3>
+							<p>Drums</p>
+							<p>321 423-5545</p>
+					</li>
+					<li>
+							<h3>Dave Kropf</h3>
+							<p>Drums</p>
+							<p>407 677-7682</p>
+					</li>
+					<li>
+							<h3>Jenn Willsey</h3>
+							<p>Vocals</p>
+							<p>407 773-7585</p>
+					</li>
+					<li>
+							<h3>Matt Tuten</h3>
+							<p>Mandolin</p>
+							<p>321 996-0427</p>
+					</li>
+					<li>
+							<h3>Carter Everet</h3>
+							<p>Guitar</p>
+							<p>321 353-8897</p>
+					</li>
+					<li>
+							<h3>Jay Camphire</h3>
+							<p>Keyboard</p>
+							<p>321 464-2454</p>
+					</li>
+					<li>
+							<h3>Dave Gibbs</h3>
+							<p>Keyboard</p>
+							<p>407 889-7652</p>
+					</li>
+					<li>
+							<h3>Shawn Ghannam</h3>
+							<p>Guitar</p>
+							<p>407 623-8971</p>
+					</li>
+					<li>
+							<h3>Bruce Hayes</h3>
+							<p>Guitar</p>
+							<p>407 327-0789</p>
+					</li>
+				</ul>
+			</section>
+			
+			<footer data-role="footer" data-position="fixed" class="footer">
+				<nav data-role="navbar">
+					<ul>
+						<li><a href="#add" data-icon="plus" id="addNav">Add Entry</a></li>
+						<li><a href="#options" data-icon="gear" id="optionsNav">Options</a></li>
+					</ul>
+				</nav>
+			</footer>
 		</section>
 
-		<footer data-role="footer">
-		</footer>
+		<section data-role="page" data-add-back-btn="true" id="add" class="page">
+		
+			<header data-role="header" data-position="fixed" class="header">
+				<h1><img src="img/brand2.gif" id="brand"/>Add Entry</h1>
+			</header>
+			
+			<section data-roll="content">
+				<form action="" method="post" id="theForm">
+				
+					<span id="required">( * required fields )</span>
+					<div id="errors"></div>
+					<hr/>
+					
+					<div data-role="fieldcontain">
+						<label for="fname">* First Name:</label>
+						<input type="text" name="fname" id="fname" class="required" placeholder="Enter First Name" />
+					</div>
+				
+					<div data-role="fieldcontain">
+						<label for="lname">* Last Name:</label>
+						<input type="text" name="lname" id="lname" class="required" placeholder="Enter Last Name" />
+					</div>
+				
+					<div data-role="fieldcontain">
+						<label for="phone">* Phone:</label>
+						<input type="text" name="phone" id="phone" class="required phoneUS" placeholder="Enter Phone Number" />
+						<span class="hint">example: xxx-xxx-xxxx</span>
+					</div>
+				
+					<div data-role="fieldcontain">
+						<label for="primary">* Primary Instrument</label>
+						<select  name="primary" id="primary" data-native-menu="false" class="required">
+							<option data-placeholde="true">Select Instrument</option>
+								<option value="Guitar">Guitar</option>
+								<option value="Bass">Bass</option>
+								<option value="Drums">Drums</option>
+								<option value="Keys">Keys</option>
+								<option value="Vocals">Vocals</option>
+								<option value="Other">Other</option>
+						</select>
+					</div>
+				
 
-	</section>
+				
+					<div data-role="fieldcontain">
+						<label for="notes">Notes:</label>
+						<textarea name="notes" id="notes"></textarea>
+						<span class="hint">Record pertinent details about musician.</span>
+					</div>
+				
+					<a href="#home" data-role="button" data-inline="true">Save</a>
+		
+				</form>
+			</section>
+			
+		</section>
 
+		<section data-role="page" data-add-back-btn="true" id="options" class="page">
+		
+			<header data-role="header" data-position="fixed" class="header">
+				<h1><img src="img/brand2.gif" id="brand"/>Options</h1>
+			</header>
+			
+			<section data-roll="content">
+				<form>
+							
+					
+					<div data-role="fieldcontain">
+						<legend class="bigLabel">Sort Options:</legend>
+						<div id="checks">
+							<fieldset data-role="controlgroup" data-type="vertical" data-mini="false" class="radios">
+								<input type="radio" value="Guitar" name="options" id="options-1" />
+								<label for="options-1">Guitar</label>
+								<input type="radio" value="Bass" name="options" id="options-2" />
+								<label for="options-2">Bass</label>
+								<input type="radio" value="Drums" name="options" id="options-3" />
+								<label for="options-3">Drums</label>
+							</fieldset>
+						</div>
+					</div>
+					
+					<div data-role="fieldcontain">
+						<legend class="bigLabel">Filter Options:</legend>
+						<div id="checks">
+							<fieldset data-role="controlgroup" data-type="vertical" data-mini="false" class="checks">
+								<input type="checkbox" value="Guitar" name="all" id="a11-1" />
+								<label for="a11-1">Guitar</label>
+								<input type="checkbox" value="Bass" name="all" id="a11-2" />
+								<label for="a11-2">Bass</label>
+								<input type="checkbox" value="Drums" name="all" id="a11-3" />
+								<label for="a11-3">Drums</label>
+								<input type="checkbox" value="Keys" name="all" id="a11-4" />
+								<label for="a11-4">Keys</label>
+								<input type="checkbox" value="Vocals" name="all" id="a11-5" />
+								<label for="a11-5">Vocals</label>
+								<input type="checkbox" value="Other" name="all" id="a11-6" />
+								<label for="a11-6">Other</label>
+							</fieldset>
+						</div>
+					</div>
+					
+					<a href="#home" data-role="button" data-inline="true">Save</a>
+				
+				</form>
+			</section>
+		</section>
 
+	</div>
 
-
-
-</div>
+	<!-- JavaScript -->
+	<script src="js/libs/jquery-2.0.3.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
+	<script src="js/libs/jquery.validate.min.js"></script>
+	<script src="js/main.js"></script>
 </body>
 </html>
