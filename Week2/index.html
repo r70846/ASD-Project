@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!--   Russell Gaspard     		 -->
-<!--   ASD 1307, Project 1 	     -->
+<!--   ASD 1307, Project 2 	     -->
 <!--   Mobile Development 	     -->
 <!--   Full Sail University 	 -->
 <html>
@@ -37,16 +37,26 @@
 			
 			<section data-roll="content">
 			
-				<div class="ui-grid-a" id="find">
+				<!-- <div class="ui-grid-a" id="find">
 					<div class="ui-block-a" >
 						<input type="search" placeholder="Search Data" data-mini="true" data-theme="c" id="search"></input>
 					</div>
 					<div class="ui-block-b"> 
 						<span id="filtered">Filtered</span>
+					</div> 
+				</div>  -->
+	
+				<div class="ui-grid-a" id="import">
+					<div class="ui-block-a" >
+						<a id="ijson" href="#" data-role="button" data-inline="true">Import JSON</a>
 					</div>
+					<div class="ui-block-b"> 
+						<a id="ixml" href="#" data-role="button" data-inline="true">Import XML</a>
+					</div> 
+
 				</div>
 	
-				<ul data-role="listview" data-inset="true" data-filter="false" id="newFeed">
+				<ul data-role="listview" data-inset="true" data-filter="false" id="list">
 					<li>
 							<h3>Ryan Walsh</h3>
 							<p>Bass</p>
@@ -103,6 +113,7 @@
 							<p>407 327-0789</p>
 					</li>
 				</ul>
+				<span id="clearall"><a href="#" id="clear">Clear All</a></span>
 			</section>
 			
 			<footer data-role="footer" data-position="fixed" class="footer">

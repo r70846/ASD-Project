@@ -1,6 +1,6 @@
 /*
 	Russell Gaspard
-	ASD 1307, Project 1
+	ASD 1307, Project 2
 	Mobile Development
 	Full Sail University
 */
@@ -35,19 +35,26 @@ section footer.footer{
 
 /* Home Page Elements */
 
-#find{
+#import{
 	background: #596178;
 	color: #fff;
     text-shadow: 0px 0px;
 	
 	padding-top: 5px;
 	padding-bottom: 5px;
-	padding-left:20px;
+	padding-left:40px;
 
 
 	margin-top:0px;
 	margin-bottom:0px;
 }
+
+#clearall{
+	padding-top:10px;
+	padding-bottom:10px;
+	margin-left:300px;
+}
+
 
 #filtered{
 	margin-left:30px;
