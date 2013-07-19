@@ -35,6 +35,11 @@ section footer.footer{
 
 /* Home Page Elements */
 
+#count{
+	margin-left:10px;
+	margin-right:10px;	
+}
+
 #import{
 	background: #596178;
 	color: #fff;

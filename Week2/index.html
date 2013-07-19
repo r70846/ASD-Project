@@ -31,9 +31,8 @@
 		
 		
 			<header data-role="header" data-position="fixed" class="header">
-				<h1><img src="img/brand2.gif" id="brand"/>BandMates</h1>
+				<h1><img src="img/brand2.gif" id="brand"/><span id="count">0</span>BandMates </h1>
 			</header>
-			
 			
 			<section data-roll="content">
 			
@@ -53,66 +52,9 @@
 					<div class="ui-block-b"> 
 						<a id="ixml" href="#" data-role="button" data-inline="true">Import XML</a>
 					</div> 
-
 				</div>
-	
-				<ul data-role="listview" data-inset="true" data-filter="false" id="list">
-					<li>
-							<h3>Ryan Walsh</h3>
-							<p>Bass</p>
-							<p>321 567-2232</p>
-					</li>
-					<li>
-							<h3>Russ Gaspard</h3>
-							<p>Guitar</p>
-							<p>407 439-0605</p>
-					</li>
-					<li>
-							<h3>Joe DeBottis</h3>
-							<p>Drums</p>
-							<p>321 423-5545</p>
-					</li>
-					<li>
-							<h3>Dave Kropf</h3>
-							<p>Drums</p>
-							<p>407 677-7682</p>
-					</li>
-					<li>
-							<h3>Jenn Willsey</h3>
-							<p>Vocals</p>
-							<p>407 773-7585</p>
-					</li>
-					<li>
-							<h3>Matt Tuten</h3>
-							<p>Mandolin</p>
-							<p>321 996-0427</p>
-					</li>
-					<li>
-							<h3>Carter Everet</h3>
-							<p>Guitar</p>
-							<p>321 353-8897</p>
-					</li>
-					<li>
-							<h3>Jay Camphire</h3>
-							<p>Keyboard</p>
-							<p>321 464-2454</p>
-					</li>
-					<li>
-							<h3>Dave Gibbs</h3>
-							<p>Keyboard</p>
-							<p>407 889-7652</p>
-					</li>
-					<li>
-							<h3>Shawn Ghannam</h3>
-							<p>Guitar</p>
-							<p>407 623-8971</p>
-					</li>
-					<li>
-							<h3>Bruce Hayes</h3>
-							<p>Guitar</p>
-							<p>407 327-0789</p>
-					</li>
-				</ul>
+					<ul data-role="listview" data-inset="true" data-filter="false" id="list">
+					</ul>
 				<span id="clearall"><a href="#" id="clear">Clear All</a></span>
 			</section>
 			
@@ -126,10 +68,10 @@
 			</footer>
 		</section>
 
-		<section data-role="page" data-add-back-btn="true" id="add" class="page">
+		<section data-role="page" id="add" class="page">
 		
 			<header data-role="header" data-position="fixed" class="header">
-				<h1><img src="img/brand2.gif" id="brand"/>Add Entry</h1>
+				<a href="#home" data-role="button" data-icon="arrow-l" data-iconpos="left" data-inline="true">Home</a><h1><img src="img/brand2.gif" id="brand"/>Add Entry</h1>
 			</header>
 			
 			<section data-roll="content">
@@ -154,11 +96,11 @@
 						<input type="text" name="phone" id="phone" class="required phoneUS" placeholder="Enter Phone Number" />
 						<span class="hint">example: xxx-xxx-xxxx</span>
 					</div>
-				
+					
 					<div data-role="fieldcontain">
-						<label for="primary">* Primary Instrument</label>
-						<select  name="primary" id="primary" data-native-menu="false" class="required">
-							<option data-placeholde="true">Select Instrument</option>
+						<label for="instr">* Instrument</label>
+						<select  name="instr" id="instr" data-native-menu="false" class="required">
+							<option value="" data-placeholder="true">Select Instrument</option>
 								<option value="Guitar">Guitar</option>
 								<option value="Bass">Bass</option>
 								<option value="Drums">Drums</option>
@@ -176,17 +118,17 @@
 						<span class="hint">Record pertinent details about musician.</span>
 					</div>
 				
-					<a href="#home" data-role="button" data-inline="true">Save</a>
-		
+					<a href="#home" id="save" data-role="button" data-inline="true">Save</a>
+					<span id="clean"><a href="#" id="clear">Clear Form</a></span>
 				</form>
 			</section>
 			
 		</section>
 
-		<section data-role="page" data-add-back-btn="true" id="options" class="page">
+		<section data-role="page" id="options" class="page">
 		
 			<header data-role="header" data-position="fixed" class="header">
-				<h1><img src="img/brand2.gif" id="brand"/>Options</h1>
+				<a href="#home" data-role="button" data-icon="arrow-l" data-iconpos="left" data-inline="true">Home</a><h1><img src="img/brand2.gif" id="brand"/>Options</h1>
 			</header>
 			
 			<section data-roll="content">

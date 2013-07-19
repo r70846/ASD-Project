@@ -4,22 +4,56 @@
 // Full Sail University
 
 
+
+
+
 	
 ///////////////  HOME ///////////////////////	
+
+var globalKey = 0;
 
 $('#home').on('pageinit', function(){
 
 
 var fnDisplayData = function(){
 
-	if(localStorage.length === 0){
-		//alert("No musician data has been saved.");
-	}else{
+	var list = $('#list');
+	list.html('');
+	
+	var count = $('#count');
 
+	if(localStorage.length === 0){
+	
+			var info = '<li><h3>' + 'No Musician Data Recorded' + '</h3>,</li>'
+			//'<p>' + data.instr + '</p>' +
+			//'<p>' + data.phone + '</p>' +
+			//'<p>' + data.notes + '</p></li>' 	
+			list.append(info);
+			count.text('');
+			//$('#clear').css("display", "hidden");
+	}else{
+		//console.log('hello');
+		var list = $('#list');
+		list.html('');
+		
+		for(i=0, j=localStorage.length; i<j; i++){
+			var key = localStorage.key(i);
+			var value = localStorage.getItem(key);
+			var data = JSON.parse(value);
+			
+			var info = '<li><h3>' + data.fname + ' ' + data.lname + '</h3>' +
+			'<p>' + data.instr + '</p>' +
+			'<p>' + data.phone + '</p>' +
+			'<p>' + data.notes + '</p>' +
+			'<a href="#" class="edit" id="' + key + '">Edit</a> <a href="#" class="del" id="' + key + '">Delete</a>' + 
+			'<hr/></li>' 	
+			list.append(info);
+		}
+		count.text(i);
+		//$('#clear').css("display", "inline");
 	}
 }
 
-fnDisplayData();
 
 //Import JSON
 var fnImportJSON = function(){
@@ -51,7 +85,11 @@ var fnImportJSON = function(){
 			}
 				
             //Report to user
-            alert("JSON Musician Data Saved");
+            //alert("JSON Musician Data Saved");
+            
+            //Show Data
+            fnDisplayData();
+
 		},
 		error  : function(error, parseerror) {
 			console.log(error)
@@ -61,7 +99,12 @@ var fnImportJSON = function(){
 		}
 	});
 };
-	
+
+$('#home').on('pageshow', function(){
+
+	fnDisplayData();
+
+});
 	
 //Import XML
 var fnImportXML = function(){
@@ -91,7 +134,8 @@ var fnImportXML = function(){
 								
 				//Save into localStorage
 				localStorage.setItem(randomID, JSON.stringify(entry));
-				console.log(randomID + " " + JSON.stringify(entry));
+				
+				//console.log(randomID + " " + JSON.stringify(entry));
 									
 				//OUTPUT TO CONSOLE
 				//console.log($(this).find('fname').text());
@@ -102,7 +146,10 @@ var fnImportXML = function(){
             });
                 	
             //Report to user
-            alert("XML Musician Data Saved");
+            //alert("XML Musician Data Saved");
+            
+            //Show Data
+            fnDisplayData();
 
 		},
 		error  : function(error, parseerror) {
@@ -122,45 +169,87 @@ var fnClearData	= function (){
 		alert("No musician data has been saved.");
 	}else{
 		localStorage.clear();
-		alert("All Musicians Deleted");
-		//window.location.reload();
-		return false;
+    	fnDisplayData(); //Show Data
+    	//window.location.reload();
 	}
 }
-	
-	
-	function saveData(key){
-		if(!key){
-			var randomID = Math.floor(Math.random()*100000); //Make new key
-		}else{
-			var randomID = key; //reuse previos key to overwrite for "edit"
-		}
-		
-		//Compile form data into an object - properties include array with label and value.
-		var entry		={};
 
-		entry.fname		= ["First Name:", id("fname").value];
-		entry.lname		= ["Last Name:", id("lname").value];
-		entry.phone		= ["Phone:", id("phone").value];
-		entry.email		= ["Email:", id("email").value];
-		entry.primary	= ["Primary Instrument:", id("primary").value];
-		entry.all		= getAllInstruments();
-		entry.rating	= ["Rating:", id("rating").value];
-		entry.lgig		= ["Last Gig:", id("lgig").value];
-		entry.notes		= ["Notes:", id("notes").value];
-		
-		//Save into localStorage
-		localStorage.setItem(randomID, JSON.stringify(entry));
-		console.log(randomID + " " + JSON.stringify(entry));
-		alert("Musician Data Saved");	
-	};
+// Delete
+var fnDelete = function (){
+	localStorage.removeItem(this.id)
+    fnDisplayData(); //Show Data
+}
+
+// Edit
+var fnEdit = function (){
+
+	alert('Edit feature coming soon!');
+	//globalKey = this.id;
+	//$.mobile.changePage('#add');
+}
 	
-	
-	
+//Event binders	
 $('#ijson').on('click', fnImportJSON);
 $('#ixml').on('click', fnImportXML);
 $('#clear').on('click', fnClearData);
-	
-	
-	
+
+
+$('#list').delegate('a.edit', 'click', fnEdit);
+$('#list').delegate('a.del', 'click', fnDelete);
+
 });
+
+
+///////////////  ADD  ///////////////////////	
+
+$('#add').on('pageinit', function(){
+
+
+var fnSaveData = function(){
+
+	//Make random number key for local storage
+	var randomID = Math.floor(Math.random()*100000);
+						
+	//Create object to hold properties.
+	var entry = {};
+					
+	entry.fname		= $('#fname').val();
+	entry.lname		= $('#lname').val();
+	entry.phone		= $('#phone').val();
+	entry.instr		= $('#instr').find(":selected").val();
+	entry.notes		= $('#notes').val();	
+	
+	//OUTPUT TO CONSOLE
+	//console.log($('#fname').val());
+	//console.log($('#lname').val());				
+	//console.log($('#phone').val());	
+	//console.log($('#instr').find(":selected").val());		
+	//console.log($('#notes').val());
+	
+								
+	//Save into localStorage
+	localStorage.setItem(randomID, JSON.stringify(entry));
+	fnClearFields();
+}
+
+var fnClearFields = function(){
+					
+	$('#fname').val('');
+	$('#lname').val('');
+	$('#phone').val('');
+	$('#notes').val('');	
+
+	var instr = $("#instr");
+	instr[0].selectedIndex = 0;
+	instr.selectmenu('refresh');
+}
+
+
+
+//Event binders	
+$('#save').on('click', fnSaveData);
+$('#clean').on('click', fnClearFields);
+
+
+});
+
