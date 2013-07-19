@@ -1,0 +1,126 @@
+/*
+	Russell Gaspard
+	ASD 1307, Project 2
+	Mobile Development
+	Full Sail University
+*/
+
+section.page{
+
+/*	background-image:url(../img/texture8.png);
+	background-image:repeat;	*/
+	
+	background: #c0c0c0;
+	background: #d8dff9;
+
+}
+
+
+
+
+section header.header{       //functioning but only with class attribute added
+	background: #596178;
+	background: #2D303C;
+	color: #FFFFFF;
+	text-align:center;
+}
+
+
+section footer.footer{      
+	background: #596178;
+	background: #2D303C;
+	color: #FFFFFF;
+	text-align:center;
+}
+
+/* Home Page Elements */
+
+#count{
+	margin-left:10px;
+	margin-right:10px;	
+}
+
+#import{
+	background: #596178;
+	color: #fff;
+    text-shadow: 0px 0px;
+	
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left:40px;
+
+
+	margin-top:0px;
+	margin-bottom:0px;
+}
+
+#clearall{
+	padding-top:10px;
+	padding-bottom:10px;
+	margin-left:300px;
+}
+
+
+#filtered{
+	margin-left:30px;
+}
+
+/* Add Entry Page & Form Elements */
+
+section#add form{
+	margin:10px;
+}
+
+label{
+	color: #2D303C;
+    text-shadow: 0px 0px;
+}
+
+span#required{
+	color: #2D303C;
+    text-shadow: 0px 0px;
+	font-style: italic;
+}
+
+span.hint{
+	color: #2D303C;
+    text-shadow: 0px 0px;
+    
+    margin-left:30px;
+	font-style: italic;
+	font-size:14px;
+}
+
+.ui-li{
+	border-style:solid;
+	border-width:1px;
+	background:#E0E6F9;
+	color:black;
+}
+
+.ui-btn{
+	background: #596178;
+	color:#E0E6F9;
+    text-shadow: 0px 0px;
+   
+}
+
+.ui-btn-active{
+	background: #2D303C;
+	background:#B2C1F0;
+	color#596178;
+    text-shadow: 0px 0px;
+}
+
+
+/*
+div.button .ui-btn{
+	width: 100px;
+}
+*/
+
+/* Options Page Elements */
+
+legend.bigLabel{
+	font:bold 20px arial,sans-serif;
+}
