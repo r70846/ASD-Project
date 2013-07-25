@@ -4,7 +4,8 @@
 		"lname":	"Gaspard",	
 		"phone":	"321-439-0605",					
 		"instr":	"Guitar",	
-		"notes":	"Russ also plays fiddle, mandolin and harmonica."	
+		"notes":	"
+		"	
 	},
 	{
 		"fname":	"Dave",	
@@ -33,5 +34,40 @@
 		"phone":	"407-252-4264",				
 		"instr":	"Vocals",			
 		"notes":	"Sings a fine lead but incredible harmony as well."	
+	},
+	{
+		"fname":	"Matt",	
+		"lname":	"Tuten",	
+		"phone":	"407-310-7424",				
+		"instr":	"Other",	
+		"notes":	"Mandolin player."	
+	},
+	{
+		"fname":	"Nik",	
+		"lname":	"Ritchie",	
+		"phone":	"321-439-0605",				
+		"instr":	"Drums",	
+		"notes":	"Nik works with me at Full Sail. Great drummer."	
+	},
+	{
+		"fname":	"Derrick",	
+		"lname":	"Harvin",	
+		"phone":	"321-331-2791",				
+		"instr":	"Keys",	
+		"notes":	"Killer Jazz player."	
+	},
+	{
+		"fname":	"Ryan",	
+		"lname":	"Walsh",	
+		"phone":	"407-678-1765",					
+		"instr":	"Bass",		
+		"notes":	"Crazy bass player."	
+	},
+	{
+		"fname":	"Steve",	
+		"lname":	"Prince",	
+		"phone":	"321-808-9264",				
+		"instr":	"Drums",		
+		"notes":	"Hard hitter."	
 	}
 ]
