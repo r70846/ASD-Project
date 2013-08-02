@@ -14,7 +14,7 @@ $('#home').on('pageinit', function(){
 //http://127.0.0.1:5984/asdproject/_design/bandmates/index.html
 
 var fnDisplayData = function(){
-
+	$('#list').html('');
 	$.couch.db("asdproject").view("bandmates/musicians", {
 		success: function(data){
 
@@ -119,13 +119,13 @@ var fnDelete = function (){
 	var ask = confirm("Delete this entry?");
 	if (ask === true) {
 		$.couch.db('asdproject').removeDoc({
-			_id : id,
-			_rev : rev
-		},{
-			success: function(data){
-			alert('Deleted!');
-		}
-});
+				_id : id,
+				_rev : rev
+			},{
+				success: function(data){
+				//alert('Deleted!');
+			}
+		});
   	} else {
   	}
 };
@@ -175,7 +175,7 @@ var fnSaveData = function(){
 	$.couch.db('asdproject').saveDoc(entry, {
 	success: function(){
 		alert('Musician has been saved!');
-		fnDisplayData();
+		//fnDisplayData();
 	}
 });
 	
