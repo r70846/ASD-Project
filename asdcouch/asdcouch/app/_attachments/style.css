@@ -15,8 +15,23 @@ section.page{
 
 }
 
+#display{
+	margin-top:50px;
+	margin-right:10px;
+	margin-left:10px;
+	margin-right:10px;	
+}
 
-
+#verify{
+	display:none;
+	color: red;
+	text-align:center;
+	margin-top:50px;
+	margin-right:30px;
+	border-style:solid;
+	border-width:1px;
+	border-color:red;
+}
 
 section header.header{       //functioning but only with class attribute added
 	background: #596178;
@@ -40,7 +55,7 @@ section footer.footer{
 	margin-right:10px;	
 }
 
-#import{
+#backhome{
 	background: #596178;
 	color: #fff;
     text-shadow: 0px 0px;
